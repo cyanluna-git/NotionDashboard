@@ -1,9 +1,13 @@
 import requests
 
 TOKEN = "secret_duOD0wDCJn8pgrLcEasnRO5TOsOYu29hwikVYkBynoa"
-DATABASE_ID = "cfed17ffa07d4d52bfec6d9a46a8e92b"
+WORKITEM_DB = "cfed17ffa07d4d52bfec6d9a46a8e92b"
+MEMBER_DB = "95c5ea9b1e094dd9a35227958d5f6603"
+PROJECT_DB = "cfed17ffa07d4d52bfec6d9a46a8e92b"
+VERSION_DB = "cfed17ffa07d4d52bfec6d9a46a8e92b"
+KANBAN_DB = "cfed17ffa07d4d52bfec6d9a46a8e92b"
 
-url = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
+url = f"https://api.notion.com/v1/databases/{WORKITEM_DB}/query"
 
 payload = {"page_size": 100}
 headers = {
@@ -11,8 +15,8 @@ headers = {
     "Notion-Version": "2022-06-28",
     "content-type": "application/json"
 }
-def getPages():
-    
+
+def getPages():    
     response = requests.post(url, json=payload, headers=headers)
     data = response.json()
     

@@ -14,4 +14,4 @@ headers = {
 
 response = requests.post(url, json=payload, headers=headers)
 
-print(response.status_code) 
+print(response.text) 
